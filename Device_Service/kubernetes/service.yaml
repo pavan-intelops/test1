@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: device_service
+  labels:
+    app: device_service
+  name: device_service
+spec:
+  ports:
+  
+    - protocol: TCP
+      port: 1233
+      targetPort: 1233
+   
+   
+  selector:
+    app: device_service
+  type: ClusterIP

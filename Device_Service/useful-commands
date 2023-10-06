@@ -1,0 +1,39 @@
+
+
+
+    
+# Curl commands for REST Server resource Device
+# Post
+curl -X POST -H "Content-Type: application/json" \
+-d '{"Name": "sample string"}' \
+http://localhost:1233/v1/devices
+
+# Get
+curl -X GET -H "Content-Type: application/json" \
+http://localhost:1233/v1/devices
+
+# Put
+curl -X PUT -H "Content-Type: application/json" \
+-d '{"Id": 123,"Name": "sample string"}' \
+http://localhost:1233/v1/devices/123
+
+# Put
+### wrong id passed in param
+curl -X PUT -H "Content-Type: application/json" \
+-d '{"Id": 123,"Name": "sample string"}' \
+http://localhost:1233/v1/devices/1234
+
+# Get  (retrieve specific Device)
+curl -X GET -H "Content-Type: application/json" \
+http://localhost:1233/v1/devices/123
+
+# Delete
+curl -X DELETE -H "Content-Type: application/json" \
+http://localhost:1233/v1/devices/123
+
+    
+
+# when mysql throws error about server connection, fire below commands
+# CREATE USER 'root'@'%' IDENTIFIED BY 'password';
+# GRANT ALL PRIVILEGES ON *.* TO 'root'@'%';
+
